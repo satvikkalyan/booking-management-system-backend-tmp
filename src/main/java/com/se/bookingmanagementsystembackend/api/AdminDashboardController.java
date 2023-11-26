@@ -32,16 +32,5 @@ public class AdminDashboardController {
         return adminDashboardService.getRoomsCount();
     }
 
-    @GetMapping("revenue/{fromDate}/{toDate}/")
-    public int getRevenueFromDateRange(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE,pattern = "yyyy-MM-dd")LocalDate fromDate,
-                                @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE,pattern = "yyyy-MM-dd")LocalDate toDate){
-
-        return adminDashboardService.getRevenueFromDateRange(fromDate,toDate);
-    }
-
-    @GetMapping("revenue/today/")
-    public List<Integer> getTodayRevenue(){
-        return adminDashboardService.getTodaysRevenue();
-    }
 
 }
